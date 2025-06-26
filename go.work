@@ -1,0 +1,7 @@
+go 1.24.4
+
+use (
+	./Castmer-Service
+	./Get-way
+	./proto
+)
