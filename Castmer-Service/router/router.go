@@ -19,7 +19,9 @@ func (app *Application) Run() error {
 		log.Fatalf("failed to listen: %v", err)
 	}
 	s := grpc.NewServer()
-	pb.RegisterClientHandlingServiceServer(s, &controller.Server{})
+	pb.RegisterClientHandlingServiceServer(s, &controller.Server{
+		Application: &app.Application,
+	})
 	log.Printf("server listening at %v", lis.Addr())
 	s.Serve(lis)
 

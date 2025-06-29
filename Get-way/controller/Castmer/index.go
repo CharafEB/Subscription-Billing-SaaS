@@ -11,4 +11,5 @@ type Application struct {
 
 type CastmerHandler interface {
 	SingIn(w http.ResponseWriter, r *http.Request)
+	Login(w http.ResponseWriter, r *http.Request)
 }

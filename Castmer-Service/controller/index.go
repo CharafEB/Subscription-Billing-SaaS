@@ -6,9 +6,9 @@ import (
 )
 
 type Application struct {
-	Application middleware.Application
+	*middleware.Application
 }
-
 type Server struct {
 	pb.UnimplementedClientHandlingServiceServer
+	Application *middleware.Application
 }

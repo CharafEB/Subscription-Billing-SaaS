@@ -1,17 +1,34 @@
 package model
 
-import "database/sql"
+import (
+	"context"
+
+	"github.com/microservic/castmerservice/types"
+
+	"go.mongodb.org/mongo-driver/v2/mongo"
+)
 
 type Data struct {
-	DB *sql.DB
+	DB *mongo.Client
 }
 
-type Store struct{}
+type Store struct {
+	SingUp interface {
+		SingUp(ctx context.Context, SingIn types.SingUpData) error
+	}
 
-func NewStore(db *sql.DB) Store {
+	Login interface {
+		Login(ctx context.Context, LoginData types.LoginData) error
+	}
+}
+
+func NewStore(db *mongo.Client) Store {
 	if db == nil {
 		panic("nil pointer passed to NewStore")
 	}
-	//data := &Data{DB: db}
-	return Store{}
+	data := &Data{DB: db}
+	return Store{
+		SingUp: data,
+		Login:  data,
+	}
 }

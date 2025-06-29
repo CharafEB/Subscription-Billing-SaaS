@@ -1,0 +1,20 @@
+message SingUpData {
+    string id = 1 ;
+    string name = 2 ;
+    string lasname = 3 ;
+    string email = 4 ; 
+    string password = 5;
+}
+
+message SingUpResponse {
+    bool response = 1;
+}
+
+message LoginData {
+    string email = 4 ; 
+    string password = 5;
+}
+
+message LoginResponse {
+    bool response = 1;
+}
