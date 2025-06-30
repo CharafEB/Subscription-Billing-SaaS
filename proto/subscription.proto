@@ -1,0 +1,20 @@
+syntax = "proto3";
+package subscription;
+
+option go_package = "./subscriptionservice";
+
+service ClientHandlingService {
+    rpc Subscribe(SubscribtionData ) returns(SubscribtionResponse);
+} 
+
+message SubscribtionData {
+    string UserName = 1 ;
+    string UserLastname = 2 ;
+    string UserPlan = 3 ;
+    string DayStart = 4 ;
+    string DayEnd = 5; 
+}
+
+message SubscribtionResponse {
+    bool response = 1;
+}

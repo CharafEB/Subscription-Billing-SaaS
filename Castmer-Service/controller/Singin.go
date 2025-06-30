@@ -17,7 +17,6 @@ func (s *Server) SignUp(ctx context.Context, data *prt.SingUpData) (*prt.SingUpR
 		Email:     data.Email,
 		Password:  pass,
 	}
-	fmt.Print(user)
 	err := s.Application.Store.SingUp.SingUp(ctx, user)
 	if err != nil {
 		return &prt.SingUpResponse{Response: false}, err

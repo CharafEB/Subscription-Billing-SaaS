@@ -4,7 +4,6 @@ import (
 	"context"
 
 	"github.com/microservic/castmerservice/types"
-
 	"go.mongodb.org/mongo-driver/v2/mongo"
 )
 
@@ -14,11 +13,11 @@ type Data struct {
 
 type Store struct {
 	SingUp interface {
-		SingUp(ctx context.Context, SingIn types.SingUpData) error
+		SingUp(ctx context.Context, signup types.SingUpData) error
 	}
 
 	Login interface {
-		Login(ctx context.Context, LoginData types.LoginData) error
+		Login(ctx context.Context, loginData types.LoginData) error
 	}
 }
 

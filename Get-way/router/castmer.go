@@ -4,7 +4,7 @@ import (
 	"github.com/go-chi/chi/v5"
 )
 
-func (app *GetWayController) Castmer(r chi.Router) chi.Router {
+func (app *GetWayController) castmer(r chi.Router) chi.Router {
 
 	r.Route("/Singin", func(r chi.Router) {
 		r.Post("/", app.CastmerHandler.SingUp)

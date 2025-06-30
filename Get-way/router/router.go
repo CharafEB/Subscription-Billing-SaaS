@@ -17,7 +17,8 @@ func (cnt *GetWayController) Mux() *chi.Mux {
 		middleware.Logger,
 		middleware.Recoverer,
 	)
-	r.Mount("/", cnt.Castmer(r))
+	r.Mount("/", cnt.castmer(r))
+	r.Mount("/Subscrib", cnt.subscription(r))
 	return r
 }
 
