@@ -12,15 +12,17 @@ import (
 )
 
 func main() {
+	//Open the env file
 	if err := godotenv.Load(".env"); err != nil {
 		log.Fatal(err)
 	}
-
+	// get hte port of the server
 	add := ":" + os.Getenv("PORT")
 	app := middleware.Application{
 		Address: add,
 	}
 
+	//pass the Application server
 	objCastmerHandler := &castmer.Application{Application: app}
 	objSubscriptionHandler := &subscription.Application{Application: app}
 

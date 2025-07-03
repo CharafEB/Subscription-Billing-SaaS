@@ -15,5 +15,6 @@ type Server struct {
 }
 
 type TrakerCron struct {
-	Cron *cron.Cron
+	Cron        *cron.Cron
+	Application *middleware.Application
 }

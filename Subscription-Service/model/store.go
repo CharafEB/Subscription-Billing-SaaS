@@ -17,7 +17,10 @@ type Store struct {
 	}
 
 	Traker interface {
-		Traker(ctx context.Context) error
+		Traker(ctx context.Context) ([]types.TrakerResponse, error)
+	}
+	Update interface {
+		UpdateUser(msg []byte) error
 	}
 }
 
@@ -28,6 +31,7 @@ func NewStore(db *sql.DB) Store {
 	data := &Data{DB: db}
 	return Store{
 		Subscribtion: data,
-		//Traker:       data,
+		Traker:       data,
+		Update:       data,
 	}
 }

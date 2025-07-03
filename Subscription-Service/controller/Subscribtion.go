@@ -16,7 +16,7 @@ func (s *Server) Subscribe(ctx context.Context, SubscribtionData *prt.Subscribti
 		DayEnd:       SubscribtionData.DayEnd,
 	}
 	if err := s.Application.Store.Subscribtion.Subscribtion(ctx, Subscribtioninfo); err != nil {
-		return &prt.SubscribtionResponse{Response: false	}, err
+		return &prt.SubscribtionResponse{Response: false}, err
 	}
 	return &prt.SubscribtionResponse{Response: true}, nil
 }

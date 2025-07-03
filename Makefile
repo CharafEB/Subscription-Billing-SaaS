@@ -14,7 +14,7 @@ subscription :
 	cd ./Subscription-Service/ && air
 
 notification :
-	cd ./Notification-Service/ && npx nodemon app.js
+	cd ./Notification-Service/ && npx nodemon server.js
 
 work:
 	cd ./${file_name} && go mod init github.com/microservic/${proto_name}

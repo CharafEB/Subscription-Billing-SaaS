@@ -25,9 +25,10 @@ type SubscribtionData struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	UserName      string                 `protobuf:"bytes,1,opt,name=UserName,proto3" json:"UserName,omitempty"`
 	UserLastname  string                 `protobuf:"bytes,2,opt,name=UserLastname,proto3" json:"UserLastname,omitempty"`
-	UserPlan      string                 `protobuf:"bytes,3,opt,name=UserPlan,proto3" json:"UserPlan,omitempty"`
-	DayStart      string                 `protobuf:"bytes,4,opt,name=DayStart,proto3" json:"DayStart,omitempty"`
-	DayEnd        string                 `protobuf:"bytes,5,opt,name=DayEnd,proto3" json:"DayEnd,omitempty"`
+	UserEmail     string                 `protobuf:"bytes,3,opt,name=UserEmail,proto3" json:"UserEmail,omitempty"`
+	UserPlan      string                 `protobuf:"bytes,4,opt,name=UserPlan,proto3" json:"UserPlan,omitempty"`
+	DayStart      string                 `protobuf:"bytes,5,opt,name=DayStart,proto3" json:"DayStart,omitempty"`
+	DayEnd        string                 `protobuf:"bytes,6,opt,name=DayEnd,proto3" json:"DayEnd,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -72,6 +73,13 @@ func (x *SubscribtionData) GetUserName() string {
 func (x *SubscribtionData) GetUserLastname() string {
 	if x != nil {
 		return x.UserLastname
+	}
+	return ""
+}
+
+func (x *SubscribtionData) GetUserEmail() string {
+	if x != nil {
+		return x.UserEmail
 	}
 	return ""
 }
@@ -145,13 +153,14 @@ var File_subscription_proto protoreflect.FileDescriptor
 
 const file_subscription_proto_rawDesc = "" +
 	"\n" +
-	"\x12subscription.proto\x12\fsubscription\"\xa2\x01\n" +
+	"\x12subscription.proto\x12\fsubscription\"\xc0\x01\n" +
 	"\x10SubscribtionData\x12\x1a\n" +
 	"\bUserName\x18\x01 \x01(\tR\bUserName\x12\"\n" +
-	"\fUserLastname\x18\x02 \x01(\tR\fUserLastname\x12\x1a\n" +
-	"\bUserPlan\x18\x03 \x01(\tR\bUserPlan\x12\x1a\n" +
-	"\bDayStart\x18\x04 \x01(\tR\bDayStart\x12\x16\n" +
-	"\x06DayEnd\x18\x05 \x01(\tR\x06DayEnd\"2\n" +
+	"\fUserLastname\x18\x02 \x01(\tR\fUserLastname\x12\x1c\n" +
+	"\tUserEmail\x18\x03 \x01(\tR\tUserEmail\x12\x1a\n" +
+	"\bUserPlan\x18\x04 \x01(\tR\bUserPlan\x12\x1a\n" +
+	"\bDayStart\x18\x05 \x01(\tR\bDayStart\x12\x16\n" +
+	"\x06DayEnd\x18\x06 \x01(\tR\x06DayEnd\"2\n" +
 	"\x14SubscribtionResponse\x12\x1a\n" +
 	"\bresponse\x18\x01 \x01(\bR\bresponse2h\n" +
 	"\x15ClientHandlingService\x12O\n" +

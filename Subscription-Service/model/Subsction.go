@@ -10,9 +10,9 @@ import (
 func (d *Data) Subscribtion(ctx context.Context, signup types.SubscribtionData) error {
 	subscriptionID := ulid.Make().String()
 
-	qeury := `INSERT INTO  clients (sub_id,user_name , user_lastName ,user_paln ,start_day , end_day ) VALUES ($1,$2,$3,$4,$5,$6)`
+	qeury := `INSERT INTO  clients (sub_id,user_name , user_lastName ,user_paln ,start_day , end_day , user_email) VALUES ($1,$2,$3,$4,$5,$6,$7)`
 
-	_, err := d.DB.ExecContext(ctx, qeury, &subscriptionID, &signup.UserName, &signup.UserLastname, &signup.UserPlan, &signup.DayStart, &signup.DayEnd)
+	_, err := d.DB.ExecContext(ctx, qeury, &subscriptionID, &signup.UserName, &signup.UserLastname, &signup.UserPlan, &signup.DayStart, &signup.DayEnd, &signup.Email)
 	if err != nil {
 		log.Printf("Error adding event to display: %v", err)
 		return err
