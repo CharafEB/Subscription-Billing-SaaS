@@ -55,3 +55,7 @@ make work file_name=MyService proto_name=myproto
 | Database (Users)         | MongoDB                |
 | Database (Subscriptions) | PostgreSQL             |
 | Dev Tools                | Air, Nodemon, Makefile |
+
+---
+## Email :
+![Architecture Diagram](./email-sub.png)
